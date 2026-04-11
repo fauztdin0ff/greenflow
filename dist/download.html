@@ -85,7 +85,44 @@
 
          <section class="download">
             <div class="download__body container">
+               <div class="download__image">
+                  <img src="img/frame-1.png" width="656" height="470" alt="frame">
+               </div>
+               <div class="download__info">
+                  <a href="" class="download__button">
+                     <svg viewBox="0 0 200 200" class="download__button-text">
+                        <defs>
+                           <path id="circlePath" d="M 100,100
+                                    m -75,0
+                                    a 75,75 0 1,1 150,0
+                                    a 75,75 0 1,1 -150,0" />
+                        </defs>
 
+                        <text>
+                           <textPath href="#circlePath">
+                              Скачать установщик
+                           </textPath>
+                           <textPath href="#circlePath" startOffset="50%">
+                              Скачать установщик
+                           </textPath>
+                        </text>
+                     </svg>
+                     <svg class="download__button-icon">
+                        <use xlink:href="img/icons/icons.svg#icon-download"></use>
+                     </svg>
+                  </a>
+                  <div class="download__text">
+                     Версия 1.0.0 <br>
+                     Поддержка: Autodesk Revit 2020-2024 <br>
+                     Дата релиза: 01.04.2026
+                  </div>
+                  <div class="download__figure">
+                     <picture>
+                        <source media="(max-width: 767px)" srcset="img/figure-triple.png">
+                        <img src="img/figure-double.png" alt="">
+                     </picture>
+                  </div>
+               </div>
             </div>
          </section>
 
