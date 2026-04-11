@@ -347,6 +347,49 @@ if (reviewsSlider) {
 }
  */
 
+
+
+/*==========================================================================
+faq
+============================================================================*/
+function initFaqAccordion() {
+   const faqItems = document.querySelectorAll('.faq__item');
+   if (!faqItems.length) return;
+
+   faqItems.forEach(item => {
+      const question = item.querySelector('.faq__question');
+      const answer = item.querySelector('.faq__answer');
+
+      if (!question || !answer || item.dataset.inited) return;
+
+      question.addEventListener('click', () => {
+         const isActive = item.classList.contains('active');
+
+         faqItems.forEach(el => {
+            const elAnswer = el.querySelector('.faq__answer');
+            if (!elAnswer) return;
+
+            el.classList.remove('active');
+            elAnswer.style.maxHeight = null;
+         });
+
+         if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+         }
+      });
+
+      item.dataset.inited = 'true';
+   });
+}
+
+
+/*==========================================================================
+Init
+============================================================================*/
+document.addEventListener('DOMContentLoaded', () => {
+   initFaqAccordion();
+})
 })();
 
 /******/ })()
