@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   <meta name="format-detection" content="telephone=no">
+   <!-- Favicon -->
+   <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="img/fav/android-chrome-192x192.png">
+   <link rel="icon" type="image/png" sizes="512x512" href="img/fav/android-chrome-512x512.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+   <link rel="icon" type="image/x-icon" href="img/fav/favicon.ico">
+   <!--<meta name="msapplication-TileColor" content="#000000">
+   <meta name="theme-color" content="#000000">-->
+   <!-- Meta Description -->
+   <meta name="description" content="">
+   <meta property="og:title" content="">
+   <meta property="og:description" content="">
+   <meta property="og:url" content="">
+   <meta property="og:type" content="website">
+   <!-- Styles -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Главная</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header class="header">
+   <div class="header__body container">
+      <button type="button" class="menu__icon" aria-label="Открыть меню">
+         <img src="img/icons/menu-list.svg" width="20" height="10" alt="icon">
+      </button>
+      <a href="" class="header__logo" aria-label="На главную">
+         <img src="img/logo-brand.png" width="230" height="67" alt="logo">
+      </a>
+      <div class="header__menu menu">
+         <div class="menu__body">
+            <div class="menu__body-logo">
+               <img src="img/logo-brand.png" width="135" height="39" alt="logo">
+            </div>
+            <button type="button" class="menu__body-close" aria-label="Закрыть меню">
+               <svg>
+                  <use xlink:href="img/icons/icons.svg#icon-close"></use>
+               </svg>
+            </button>
+            <ul class="menu__list">
+               <li><a href="">Главная</a></li>
+               <li><a href="">Купить</a></li>
+               <li><a href="">Справка</a></li>
+               <li><a href="">Новости</a></li>
+            </ul>
+         </div>
+      </div>
+      <div class="header__buttons">
+         <button type="button" class="header__button open-popup" data-popup="login-popup" aria-label="Войти">
+            <svg>
+               <use xlink:href="img/icons/icons.svg#icon-user"></use>
+            </svg>
+         </button>
+         <a href="cart.html" class="header__button" aria-label="Корзина">
+            <svg>
+               <use xlink:href="img/icons/icons.svg#icon-cart"></use>
+            </svg>
+         </a>
+      </div>
+   </div>
+</header>
+      <main>
+
+         <nav class="breadcrumbs">
+            <div class="breadcrumbs__body container">
+               <ol class="breadcrumbs__list">
+                  <li class="breadcrumbs__item">
+                     <a href="/">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                     <span>Справка</span>
+                  </li>
+               </ol>
+            </div>
+         </nav>
+
+         <section class="help">
+            <div class="help__body container">
+               <div class="help__head">
+                  <div class="help__titles">
+                     <h1 class="help__title page-title">Справка и документация</h1>
+                     <div class="help__subtitle section-subtitle">
+                        <p>Узнайте, как установить, активировать и эффективно использовать возможности плагина GreenFlow
+                           для Autodesk Revit.</p>
+                        <p>Остались вопросы? Напишите специалистам техподдержки:</p>
+                     </div>
+                     <div class="help__links">
+                        <a href="" class="help__link" aria-label="Написать в Telegram">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon-telegram"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+
+                  <search class="search">
+                     <form class="search__form">
+                        <div class="search__form-area">
+                           <input type="search" class="search__input" required placeholder="Поиск">
+                           <button type="submit" class="search__submit">
+                              <svg>
+                                 <use xlink:href="img/icons/icons.svg#icon-glass"></use>
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="search__results">
+                           <a href="">Установка</a>
+                           <a href="">Активация лицензии</a>
+                           <a href="">Обновления</a>
+                           <a href="">Инструкция по использованию</a>
+                        </div>
+                     </form>
+                  </search>
+               </div>
+            </div>
+         </section>
+
+         <section class="install">
+            <div class="install__body container">
+               <h2 class="install__title section-title">Установка</h2>
+               <div class="install__subtitle section-subtitle">
+                  Установка занимает несколько минут и не требует прав
+                  администратора.
+               </div>
+               <div class="install__content">
+                  <div class="install__graphic">
+                     <div class="install__bg">
+                        <picture>
+                           <source media="(max-width: 767px)" srcset="img/monitor-mob.png">
+                           <img src="img/monitor.png" alt="monitor">
+                        </picture>
+                     </div>
+                     <div class="install__image">
+                        <img src="img/robot-hand.png" class="install__hand" width="194" height="240" alt="hand">
+                     </div>
+                  </div>
+                  <div class="install__steps">
+                     <div class="install__step">
+                        <div class="install__step-head">
+                           <div class="install__step-num">1</div>
+                           <div class="install__step-name">Скачивание</div>
+                        </div>
+                        <div class="install__step-text">
+                           Загрузите актуальную версию файла-установщика GreenFlow после регистрации в личном кабинете
+                           и оплаты заказа.
+                        </div>
+                        <a href="" class="btn">Скачать плагин</a>
+                     </div>
+                     <div class="install__step">
+                        <div class="install__step-head">
+                           <div class="install__step-num">2</div>
+                           <div class="install__step-name">Установка</div>
+                        </div>
+                        <div class="install__step-text">
+                           Установите плагин на ПК. Перед запуском убедитесь, что Revit закрыт, а компьютер подключен к
+                           сети Интернет.
+                        </div>
+                     </div>
+                     <div class="install__step">
+                        <div class="install__step-head">
+                           <div class="install__step-num">3</div>
+                           <div class="install__step-name">Активация</div>
+                        </div>
+                        <div class="install__step-text">
+                           Запустите Revit. На вкладке GreenFlow нажмите «Активация ключа». Введите в поле лицензионный
+                           ключ, полученный на email
+                           или скопированный из Личного кабинета, и нажмите «Активировать». Перезапустите Revit.
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="activation">
+            <div class="activation__wrapper">
+               <div class="activation__body container">
+                  <div class="activation__row">
+                     <div class="activation__titles">
+                        <h2 class="activation__title section-title">Активация лицензии</h2>
+                        <div class="activation__subtitle section-subtitle">
+                           <p>После оплаты лицензия привязывается к учётной записи. Активируйте лицензию в плагине,
+                              используя лицензионный ключ,
+                              полученный по электронной почте или скопируйте его из Личного кабинета.</p>
+                           <p>При необходимости использования лицензии на другом ПК деактивируйте ключ в Личном кабинете
+                              и повторите процесс активации
+                              на другом компьютере.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="activation__screen">
+                        <img src="img/screen-1.png" width="458" height="277" alt="screen">
+                     </div>
+                  </div>
+                  <div class="activation__row">
+                     <div class="activation__titles">
+                        <h2 class="activation__title section-title">Обновления</h2>
+                        <div class="activation__subtitle section-subtitle">
+                           <p>Обновления доступны пользователям с активной лицензией.
+                              Проверка доступных обновлений происходит в фоновом режиме.
+                              При запуске Revit появляется уведомление о наличии новой версии.
+                           </p>
+                           <p>При согласии на обновление система автоматически завершает работу Revit и производит
+                              установку, при отказе — обновление
+                              будет предложено при следующем запуске Revit.</p>
+                        </div>
+                     </div>
+                     <div class="activation__screen">
+                        <img src="img/screen-2.png" width="458" height="277" alt="screen">
+                     </div>
+                  </div>
+               </div>
+               <div class="activation__bg">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#icon-figure"></use>
+                  </svg>
+               </div>
+            </div>
+            <img src="img/corner.png" class="activation__corner" alt="corner">
+         </section>
+
+         <section class="instruction">
+            <div class="instruction__body container">
+               <h2 class="instruction__title section-title">Инструкция по использованию</h2>
+               <div class="instruction__subtitle section-subtitle">
+                  <p>
+                     Green Flow — это 5 индивидуальных профилей по 14 команд вокруг курсора, которые ускоряют работу в
+                     Autodesk Revit.
+                  </p>
+                  <p>
+                     По умолчанию вызов GreenFlow выполняется комбинацией клавиш “CTRL” + “Space” (возможно поменять в
+                     настройках).
+                  </p>
+               </div>
+               <div class="instruction__groups">
+                  <div class="instruction__group">
+                     <h3 class="instruction__group-title">Настройка</h3>
+                     <div class="instruction__group-content">
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">1</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-1.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Запуск Настроек</div>
+                              <div class="instruction__card-text">Перейдите на вкладку GreenFlow  и нажмите кнопку
+                                 «Настройки».</div>
+                           </div>
+                        </div>
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">2</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-2.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Клавиши вызова</div>
+                              <div class="instruction__card-text">В окне настроек задайте удобную комбинацию из одной
+                                 или двух клавиш для вызова панели команд. Для назначения одной
+                                 клавиши вызова команд выберите в качестве первой «None».</div>
+                           </div>
+                        </div>
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">3</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-3.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Менеджер профилей</div>
+                              <div class="instruction__card-text">Используйте Менеджер профилей в верхней части окна,
+                                 чтобы создавать новые или удалять лишние наборы команд. Чтобы
+                                 переименовать текущий профиль, введите название в строку под панелью команд.
+                                 Для добавления профиля нажмите <img src="img/plus.png" width="17" height="17" alt="">
+                                 справа от профилей
+                                 вверху окна настроек. <br> Чтобы
+                                 удалить профиль нажмите <img src="img/minus.png" width="17" height="17" alt=""> справа
+                                 от профилей
+                                 вверху окна настроек. Последний профиль удалить нельзя.</div>
+                           </div>
+                        </div>
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">4</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-4.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Панель команд</div>
+                              <div class="instruction__card-text">Кликайте на <img src="img/plus.png" width="17"
+                                    height="17" alt=""> в пустой ячейке рабочего блока и выберите
+                                 нужную команду из списка. Не забудьте нажать «Сохранить». Вы
+                                 можете выбрать от 1 до 14 команд и расположить их так, как вам будет удобно.</div>
+                           </div>
+                        </div>
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">5</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-2.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Управление настройками</div>
+                              <div class="instruction__card-text">Нажмите «Сохранить», чтобы применить все внесенные
+                                 изменения. Нажмите «Отменить», чтобы закрыть окно без сохранения
+                                 изменений.</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="instruction__group">
+                     <h3 class="instruction__group-title">Использование</h3>
+                     <div class="instruction__group-content">
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">1</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-6.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Вызов панели команд</div>
+                              <div class="instruction__card-text">Закройте окно настроек и нажмите заданную комбинацию
+                                 вызова (по‑умолчанию «CTRL»+«Space»). Панель команд появится
+                                 под курсором. Панель пропадёт после выбора нужной команды. Панель пропадает
+                                 после выбора нужной команды или нажать «Esc»
+                                 для закрытия окна.</div>
+                           </div>
+                        </div>
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">2</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-6.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Переключение профилей</div>
+                              <div class="instruction__card-text">По умолчанию активируется последний настроенный
+                                 профиль. Для переключения на другой профиль наведитесь на полупрозрачное
+                                 меню профилей (под набором команд), чтобы меню стало активным. Используйте колесико
+                                 мышки для прокрутки. Остановите
+                                 выбор на нужном профиле. Переведите курсор обратно на панель команд и продолжайте
+                                 работу.</div>
+                           </div>
+                        </div>
+                        <div class="instruction__card">
+                           <div class="instruction__card-num">3</div>
+                           <div class="instruction__card-image">
+                              <img src="img/instr-8.png" alt="">
+                           </div>
+                           <div class="instruction__card-info">
+                              <div class="instruction__card-name">Вызов окна настроек</div>
+                              <div class="instruction__card-text">Чтобы перейти в окно настроек из панели команд,
+                                 нажмите на логотип в ее центре.</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      <footer class="footer">
+   <div class="footer__body container">
+      <div class="footer__main">
+         <div class="footer__logo">
+            <img src="img/logo-brand.png" width="277" height="81" alt="logo">
+         </div>
+         <div class="footer__support">
+            <div class="footer__label">Мы здесь, чтобы помочь</div>
+            <div class="footer__support-text">
+               Если у вас появились проблемы или вопросы, напишите нам — мы ответим при первой возможности.
+            </div>
+            <a href="" class="footer__support-link" aria-label="Написать в Telegram">
+               <svg>
+                  <use xlink:href="img/icons/icons.svg#icon-telegram"></use>
+               </svg>
+            </a>
+         </div>
+         <div class="footer__menu">
+            <div class="footer__menu-col">
+               <div class="footer__label">Компания</div>
+               <ul class="footer__menu-list">
+                  <li><a href="">Главная</a></li>
+                  <li><a href="">Купить</a></li>
+                  <li><a href="">Справка</a></li>
+                  <li><a href="">Новости</a></li>
+               </ul>
+            </div>
+            <div class="footer__menu-col">
+               <div class="footer__label">Правовая информация</div>
+               <ul class="footer__menu-list">
+                  <li><a href="">Публичная оферта лицензионный договор</a></li>
+                  <li><a href="">Политика конфиденциальности</a></li>
+                  <li><a href="">Согласие на обработку персональных данных</a></li>
+                  <li><a href="">Политика использования Cookies</a></li>
+                  <li><a href="">Контакты</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="footer__copyright">
+         2024-2026. Все права защищены.
+      </div>
+   </div>
+</footer>
+   </div>
+   
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+   <script src="js/app.js"></script>
+</body>
+
+</html>
