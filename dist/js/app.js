@@ -385,10 +385,70 @@ function initFaqAccordion() {
 
 
 /*==========================================================================
+Quantity
+============================================================================*/
+function initQuantity(root = document) {
+   root.addEventListener('click', function (e) {
+      const minusBtn = e.target.closest('.quantity__minus');
+      const plusBtn = e.target.closest('.quantity__plus');
+
+      if (!minusBtn && !plusBtn) return;
+
+      const quantity = e.target.closest('.quantity');
+      if (!quantity) return;
+
+      const input = quantity.querySelector('input');
+      if (!input) return;
+
+      let value = parseInt(input.value) || 1;
+
+      const min = parseInt(input.dataset.min) || 1;
+      const max = parseInt(input.dataset.max) || Infinity;
+
+      if (minusBtn) {
+         value = Math.max(min, value - 1);
+      }
+
+      if (plusBtn) {
+         value = Math.min(max, value + 1);
+      }
+
+      input.value = value;
+
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+   });
+}
+
+
+/*==========================================================================
+Valid input
+============================================================================*/
+function initInputFocusClear(root = document) {
+   root.addEventListener('focusin', function (e) {
+      const input = e.target.closest('input, textarea');
+      if (!input) return;
+
+      input.classList.remove('no-valid');
+
+      const parent = input.parentElement;
+      if (parent) {
+         parent.classList.remove('no-valid');
+
+         const errorText = parent.querySelector('.error-text');
+         if (errorText) {
+            errorText.style.display = 'none';
+         }
+      }
+   });
+}
+
+/*==========================================================================
 Init
 ============================================================================*/
 document.addEventListener('DOMContentLoaded', () => {
    initFaqAccordion();
+   initQuantity();
+   initInputFocusClear();
 })
 })();
 
