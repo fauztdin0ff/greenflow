@@ -442,6 +442,123 @@ function initInputFocusClear(root = document) {
    });
 }
 
+
+/*==========================================================================
+Avatar upload 
+============================================================================*/
+function initAvatarUpload() {
+   const input = document.getElementById('avatarInput');
+   const preview = document.getElementById('avatarPreview');
+
+   if (!input || !preview) return;
+
+   input.addEventListener('change', function () {
+      const file = this.files[0];
+
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+         alert('Можно загружать только изображения');
+         input.value = '';
+         return;
+      }
+
+      if (file.size > 2 * 1024 * 1024) {
+         alert('Файл слишком большой (макс 2MB)');
+         input.value = '';
+         return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+         preview.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+   });
+}
+
+
+/*==========================================================================
+Form valid
+============================================================================*/
+function enableSaveOnChange(formSelector, buttonSelector) {
+   const form = document.querySelector(formSelector);
+   const button = document.querySelector(buttonSelector);
+
+   if (!form || !button) return;
+
+   const activateButton = () => {
+      button.disabled = false;
+   };
+
+   form.addEventListener('input', activateButton);
+   form.addEventListener('change', activateButton);
+}
+
+
+/*==========================================================================
+Copy text
+============================================================================*/
+function initCopyText() {
+   document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.copytext-btn');
+      if (!btn) return;
+
+      const container = btn.closest('.copytext');
+      const textEl = container.querySelector('.copytext-val');
+      const useEl = btn.querySelector('use');
+
+      if (!textEl || !useEl) return;
+
+      const text = textEl.textContent.trim();
+      const originalIcon = 'img/icons/icons.svg#icon-copy';
+      const successIcon = 'img/icons/icons.svg#icon-check';
+
+      try {
+         await navigator.clipboard.writeText(text);
+
+         btn.classList.add('copied');
+         useEl.setAttribute('xlink:href', successIcon);
+
+         setTimeout(() => {
+            btn.classList.remove('copied');
+            useEl.setAttribute('xlink:href', originalIcon);
+         }, 1000);
+
+      } catch (err) {
+         console.error('Ошибка копирования:', err);
+      }
+   });
+}
+
+
+/*==========================================================================
+Show password
+============================================================================*/
+function initPasswordToggle() {
+   const areas = document.querySelectorAll('.popup__form-area');
+
+   areas.forEach(area => {
+      const input = area.querySelector('input');
+      const eye = area.querySelector('.popup__form-eyes');
+
+      if (!input || !eye) return;
+
+      eye.addEventListener('click', () => {
+         const isHidden = input.type === 'password';
+
+         input.type = isHidden ? 'text' : 'password';
+
+         area.classList.toggle('pass-visible', isHidden);
+      });
+
+      if (input.type !== 'password') {
+         input.type = 'password';
+      }
+   });
+}
+
+
 /*==========================================================================
 Init
 ============================================================================*/
@@ -449,6 +566,10 @@ document.addEventListener('DOMContentLoaded', () => {
    initFaqAccordion();
    initQuantity();
    initInputFocusClear();
+   initAvatarUpload();
+   enableSaveOnChange('.cabinet__profile-form', '#saveChanges');
+   initCopyText();
+   initPasswordToggle();
 })
 })();
 
