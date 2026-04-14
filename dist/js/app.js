@@ -383,7 +383,6 @@ function initFaqAccordion() {
    });
 }
 
-
 /*==========================================================================
 Quantity
 ============================================================================*/
@@ -416,6 +415,19 @@ function initQuantity(root = document) {
       input.value = value;
 
       input.dispatchEvent(new Event('change', { bubbles: true }));
+
+      const updateBtn = document.querySelector('button[name="update_cart"]');
+
+      updateBtn.removeAttribute('disabled');
+      setTimeout(() => {
+         updateBtn.click();
+      }, 100)
+
+      updateBtn.removeAttribute('disabled');
+      setTimeout(() => {
+         updateBtn.click();
+      }, 100)
+
    });
 }
 

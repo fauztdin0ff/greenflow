@@ -445,6 +445,12 @@ Form elements
   }
 }
 
+[name=update_cart] {
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 .error-text {
   position: absolute;
   bottom: 0;
@@ -951,6 +957,43 @@ Popups general
     color: var(--color-primary);
   }
 }
+.popup__form-help {
+  display: flex;
+  justify-content: flex-end;
+}
+.popup__form-forgot {
+  font-size: 14px;
+  line-height: 128.571429%;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  transition: all 0.2s ease-in-out;
+}
+@media (hover: hover) {
+  .popup__form-forgot:hover {
+    color: var(--color-primary);
+  }
+}
+.popup__form-registr, .popup__form-login {
+  text-align: center;
+  margin-top: 34px;
+}
+.popup__form-registr button, .popup__form-login button {
+  font-size: 16px;
+  line-height: 125%;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  transition: all 0.2s ease;
+}
+@media (hover: hover) {
+  .popup__form-registr button:hover, .popup__form-login button:hover {
+    color: var(--color-primary);
+  }
+}
+@media (width < 550px) {
+  .popup__form-registr button, .popup__form-login button {
+    font-size: 14px;
+  }
+}
 .popup__form-submit {
   margin-top: 20px;
 }
@@ -990,6 +1033,123 @@ Popups general
     height: 21px;
     top: 15px;
     right: 15px;
+  }
+}
+
+/*==========================================================================
+Login popup
+============================================================================*/
+.auth-popup__body {
+  max-width: 856px;
+  padding-top: 70px;
+  padding-bottom: 86px;
+}
+@media (width < 550px) {
+  .auth-popup__body {
+    padding: 50px 25px 48px;
+  }
+}
+.auth-popup__body .agreement {
+  margin-top: 10px;
+}
+.auth-popup__wrapper {
+  max-width: 458px;
+  margin-inline: auto;
+}
+.auth-popup__title {
+  font-size: 26px;
+  margin-bottom: 56px;
+}
+@media (width < 1000px) {
+  .auth-popup__title {
+    font-size: 24px;
+  }
+}
+@media (width < 550px) {
+  .auth-popup__title {
+    font-size: 20px;
+    margin-bottom: 44px;
+  }
+}
+.auth-popup__socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+@media (width < 550px) {
+  .auth-popup__socials {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+}
+.auth-popup__social {
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+@media (hover: hover) {
+  .auth-popup__social:hover {
+    transform: translateY(-3px);
+  }
+}
+@media (width < 550px) {
+  .auth-popup__social {
+    width: 53px;
+    height: 53px;
+  }
+}
+.auth-popup__hr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 122.222222%;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #808080;
+  position: relative;
+}
+.auth-popup__hr span {
+  position: relative;
+  z-index: 2;
+  padding-inline: 11px;
+  background: #fff;
+}
+.auth-popup__hr::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #808080;
+}
+@media (width < 550px) {
+  .auth-popup__hr {
+    font-size: 14px;
+  }
+}
+.auth-popup__form .popup__form-help {
+  margin-top: -10px;
+}
+.auth-popup__form .popup__form-submit {
+  margin-top: 28px;
+}
+
+@media (width > 768px) {
+  #recover-password-popup .popup__form-login {
+    display: block;
+  }
+}
+
+.request-popup .popup__body {
+  max-width: 856px;
+  padding-bottom: 93px;
+}
+@media (width < 550px) {
+  .request-popup .popup__body {
+    padding-bottom: 56px;
   }
 }
 
@@ -3492,5 +3652,73 @@ Cabinet
   .lic-renew:hover {
     text-decoration: underline;
     color: var(--color-primary);
+  }
+}
+
+.messages {
+  position: fixed;
+  left: 72px;
+  bottom: 55px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+  max-width: 550px;
+}
+@media (width < 1000px) {
+  .messages {
+    left: 30px;
+  }
+}
+@media (width < 767px) {
+  .messages {
+    left: 12px;
+    bottom: 25px;
+    gap: 10px;
+    max-width: 254px;
+  }
+}
+
+.message {
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  line-height: 120%;
+  padding: 25px 36px;
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+.message.show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.message.message-success {
+  color: #358c26;
+  background: #dcf3d8;
+}
+.message.message-error {
+  color: #e41e1b;
+  background: #f7c9c9;
+}
+@media (width < 767px) {
+  .message {
+    gap: 10px;
+    font-size: 14px;
+    line-height: 128.571429%;
+    padding: 18px 28px;
+  }
+  .message img {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
   }
 }
