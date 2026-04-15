@@ -551,25 +551,24 @@ function initPasswordToggle() {
    const areas = document.querySelectorAll('.popup__form-area');
 
    areas.forEach(area => {
+      if (area.dataset.passInit) return;
+      area.dataset.passInit = 'true';
+
       const input = area.querySelector('input');
       const eye = area.querySelector('.popup__form-eyes');
 
       if (!input || !eye) return;
 
-      eye.addEventListener('click', () => {
+      eye.addEventListener('click', (e) => {
+         e.preventDefault();
+
          const isHidden = input.type === 'password';
 
          input.type = isHidden ? 'text' : 'password';
-
          area.classList.toggle('pass-visible', isHidden);
       });
-
-      if (input.type !== 'password') {
-         input.type = 'password';
-      }
    });
 }
-
 
 /*==========================================================================
 Cookies
@@ -605,6 +604,82 @@ Cookies
 })();
 
 /*==========================================================================
+Editable text + auto resize
+============================================================================*/
+function autoResizeTextarea(textarea) {
+   textarea.style.height = 'auto';
+   textarea.style.height = textarea.scrollHeight + 'px';
+}
+
+function initEditableTextarea() {
+   document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.editable__btn');
+      if (!btn) return;
+
+      e.preventDefault();
+
+      const wrapper = btn.closest('.editable');
+      const textarea = wrapper.querySelector('.editable__text');
+
+      if (!textarea) return;
+
+      textarea.removeAttribute('readonly');
+
+      textarea.focus();
+
+      textarea.setSelectionRange(
+         textarea.value.length,
+         textarea.value.length
+      );
+
+      autoResizeTextarea(textarea);
+   });
+
+   document.addEventListener('focusout', async (e) => {
+      const textarea = e.target.closest('.editable__text');
+      if (!textarea) return;
+
+      const wrapper = textarea.closest('.editable');
+      const related = e.relatedTarget;
+
+      if (related && wrapper.contains(related)) return;
+
+      textarea.setAttribute('readonly', true);
+   });
+
+   document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+
+      const textarea = document.activeElement;
+      if (!textarea.classList.contains('editable__text')) return;
+
+      textarea.setAttribute('readonly', true);
+      textarea.blur();
+   });
+}
+
+/*==========================================================================
+Auto resize
+============================================================================*/
+function initAutoResize() {
+   document.addEventListener('input', (e) => {
+      const textarea = e.target.closest('.editable__text');
+      if (!textarea) return;
+
+      autoResizeTextarea(textarea);
+   });
+
+   document.addEventListener('focusin', (e) => {
+      const textarea = e.target.closest('.editable__text');
+      if (!textarea) return;
+
+      autoResizeTextarea(textarea);
+   });
+
+   document.querySelectorAll('.editable__text').forEach(autoResizeTextarea);
+}
+
+/*==========================================================================
 Init
 ============================================================================*/
 document.addEventListener('DOMContentLoaded', () => {
@@ -615,7 +690,9 @@ document.addEventListener('DOMContentLoaded', () => {
    enableSaveOnChange('.cabinet__profile-form', '#saveChanges');
    initCopyText();
    initPasswordToggle();
-})
+   initEditableTextarea();
+   initAutoResize();
+});
 })();
 
 /******/ })()
