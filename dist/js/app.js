@@ -572,6 +572,39 @@ function initPasswordToggle() {
 
 
 /*==========================================================================
+Cookies
+============================================================================*/
+(function () {
+   const banner = document.getElementById('cookieBanner');
+   const acceptBtn = document.getElementById('cookieAccept');
+   const closeBtn = document.getElementById('cookieClose');
+   const STORAGE_KEY = 'cookie_consent';
+
+   if (!banner || !acceptBtn || !closeBtn) return;
+
+   if (localStorage.getItem(STORAGE_KEY)) return;
+
+   setTimeout(() => {
+      banner.classList.add('show');
+   }, 500);
+
+   function hideBanner() {
+      banner.classList.remove('show');
+   }
+
+   acceptBtn.addEventListener('click', () => {
+      localStorage.setItem(STORAGE_KEY, 'accepted');
+      hideBanner();
+   });
+
+   closeBtn.addEventListener('click', () => {
+      localStorage.setItem(STORAGE_KEY, 'closed');
+      hideBanner();
+   });
+
+})();
+
+/*==========================================================================
 Init
 ============================================================================*/
 document.addEventListener('DOMContentLoaded', () => {

@@ -77,130 +77,162 @@
                      <a href="/">Главная</a>
                   </li>
                   <li class="breadcrumbs__item">
-                     <span>Личный кабинет</span>
-                  </li>
-                  <li class="breadcrumbs__item">
-                     <span>Моя информация</span>
+                     <span>Новости</span>
                   </li>
                </ol>
             </div>
          </nav>
 
-         <section class="cabinet">
-            <div class="cabinet__body container">
-               <h1 class="cabinet__title page-title">Личный кабинет</h1>
-               <div class="cabinet__content">
-
-                  <aside class="cabinet__aside aside">
-                     <div class="aside__wrapper">
-                        <nav class="aside__menu">
-                           <ul class="aside__menu-list">
-                              <li>
-                                 <a href="cabinet.html" class="active">
-                                    <img src="img/icons/profile.svg" width="30" height="30" alt="icon">
-                                    <span class="-pc">Моя информация</span>
-                                    <span class="-mob">Данные</span>
-                                 </a>
-                              </li>
-                              <li>
-                                 <a href="cabinet-licenses.html">
-                                    <img src="img/icons/key.svg" width="30" height="30" alt="icon">
-                                    <span class="-pc">Лицензии</span>
-                                    <span class="-mob">Лицензии</span>
-                                 </a>
-                              </li>
-                              <li>
-                                 <a href="">
-                                    <img src="img/icons/exit.svg" width="30" height="30" alt="icon">
-                                    <span class="-pc">Выйти из аккаунта</span>
-                                    <span class="-mob">Выйти</span>
-                                 </a>
-                              </li>
-                           </ul>
-                        </nav>
-                        <div class="aside__button">
-                           <a href="" class="btn">Скачать</a>
+         <section class="news">
+            <div class="news__body container">
+               <h1 class="news__title page-title">Новости</h1>
+               <div class="news__subtitle section-subtitle">Следите за развитием плагина, обновлением и интересными
+                  новостями.</div>
+               <div class="news__tags">
+                  <a href="" class="news__tag active">Все публикации</a>
+                  <a href="" class="news__tag">Обновления</a>
+                  <a href="" class="news__tag">Гайды</a>
+                  <a href="" class="news__tag">Новости</a>
+               </div>
+               <div class="news__articles">
+                  <div class="news__article">
+                     <span class="news__tag">Новости</span>
+                     <a href="article.html" class="news__article-image">
+                        <img src="img/article.png" width="592" height="254" alt="image">
+                     </a>
+                     <div class="news__article-info">
+                        <div class="news__article-date">01.04.2026</div>
+                        <a href="article.html" class="news__article-name">
+                           GREEN запускает продажи плагина GreenFlow (ГринФлоу)
+                        </a>
+                        <div class="news__article-descr">
+                           Инжиниринговая компания GREEN объявляет о запуске продаж собственного плагина GreenFlow
+                           (ГринФлоу) для Autodesk Revit.
+                           С 1 апреля 2026 года плагин станет доступен для использования компаниями и специалистами,
+                           работающими с цифровыми
+                           моделями и инженерными данными.
+                        </div>
+                        <div class="news__article-link">
+                           <a href="article.html">Читать подробнее</a>
                         </div>
                      </div>
-                  </aside>
+                  </div>
 
-                  <div class="cabinet__main">
-                     <h2 class="cabinet__main-title">Моя информация</h2>
-                     <div class="cabinet__profile">
-                        <form class="cabinet__profile-form">
-                           <div class="cabinet__profile-avatar">
-                              <div class="cabinet__profile-photo">
-                                 <img src="img/photo.png" id="avatarPreview" width="120" height="120" alt="photo">
-                              </div>
-                              <div class="cabinet__profile-change">
-                                 <label>
-                                    <input type="file" id="avatarInput" accept="image/png, image/jpeg, image/webp">
-                                    Загрузить аватар
-                                 </label>
-                              </div>
-                           </div>
-                           <div class="cabinet__profile-group">
-                              <div class="cabinet__profile-row">
-                                 <div class="cabinet__profile-area">
-                                    <div class="cabinet__profile-labels">
-                                       <label for="name" class="cabinet__profile-label">ФИО</label>
-                                    </div>
-                                    <input type="text" id="name" class="input" value="Иванов Иван Иванович">
-                                    <span class="error-text"></span>
-                                 </div>
-                                 <div class="cabinet__profile-area">
-                                    <div class="cabinet__profile-labels">
-                                       <label for="company" class="cabinet__profile-label">Компания</label>
-                                    </div>
-                                    <input type="text" id="company" class="input" value="Грин">
-                                    <span class="error-text"></span>
-                                 </div>
-                              </div>
-                              <div class="cabinet__profile-row">
-                                 <div class="cabinet__profile-area">
-                                    <div class="cabinet__profile-labels">
-                                       <label for="email" class="cabinet__profile-label">Почта</label>
-                                       <button type="button" class="open-popup" data-popup="change-email-popup">Изменить
-                                          почту</button>
-                                    </div>
-                                    <input type="email" id="email" class="input" value="text@mail.ru" readonly>
-                                 </div>
-                                 <div class="cabinet__profile-area">
-                                    <div class="cabinet__profile-labels">
-                                       <label for="password" class="cabinet__profile-label">Пароль</label>
-                                       <button type="button" class="open-popup"
-                                          data-popup="change-password-popup">Изменить
-                                          пароль</button>
-                                    </div>
-                                    <input type="password" id="password" class="input" value="••••••••••" readonly>
-                                    </input>
-                                 </div>
-                              </div>
+                  <div class="news__article">
+                     <span class="news__tag">Гайды</span>
+                     <a href="article.html" class="news__article-image">
+                        <img src="img/article.png" width="592" height="254" alt="image">
+                     </a>
+                     <div class="news__article-info">
+                        <div class="news__article-date">01.04.2026</div>
+                        <a href="article.html" class="news__article-name">
+                           Как настроить панель вызова команд под себя
+                        </a>
+                        <div class="news__article-descr">
+                           В этом видео рассмотрим на примере как настроить панель вызова команд под себя, как создать
+                           несколько профилей
+                           и использовать плагин GreenFlow (ГринФлоу) для ускорения вашей ежедневной работы.
+                        </div>
+                        <div class="news__article-link">
+                           <a href="article.html">Читать подробнее</a>
+                        </div>
+                     </div>
+                  </div>
 
-                              <div class="cabinet__profile-att" style="display: none;">
-                                 <div class="cabinet__profile-att-icon">
-                                    <img src="img/icons/att.svg" width="20" height="20" alt="att icon">
-                                 </div>
-                                 <div class="cabinet__profile-att-info">
-                                    <div class="cabinet__profile-att-title">Подтвердите эл. почту</div>
-                                    <div class="cabinet__profile-att-text">Мы отправили Вам письмо с инструкциями по
-                                       подтверждению электронной почты</div>
-                                    <a href="" class="cabinet__profile-att-link">Отправить повторно</a>
-                                 </div>
-                              </div>
+                  <div class="news__article">
+                     <span class="news__tag">Обновления</span>
+                     <a href="article.html" class="news__article-image">
+                        <img src="img/article.png" width="592" height="254" alt="image">
+                     </a>
+                     <div class="news__article-info">
+                        <div class="news__article-date">01.04.2026</div>
+                        <a href="article.html" class="news__article-name">
+                           GREEN запускает продажи плагина GreenFlow (ГринФлоу)
+                        </a>
+                        <div class="news__article-descr">
+                           Инжиниринговая компания GREEN объявляет о запуске продаж собственного плагина GreenFlow
+                           (ГринФлоу) для Autodesk Revit.
+                           С 1 апреля 2026 года плагин станет доступен для использования компаниями и специалистами,
+                           работающими с цифровыми
+                           моделями и инженерными данными.
+                        </div>
+                        <div class="news__article-link">
+                           <a href="article.html">Читать подробнее</a>
+                        </div>
+                     </div>
+                  </div>
 
-                              <div class="cabinet__profile-button">
-                                 <button type="submit" id="saveChanges" class="btn" disabled>Сохранить
-                                    изменения</button>
-                              </div>
-                           </div>
-                        </form>
+                  <div class="news__article">
+                     <span class="news__tag">Новости</span>
+                     <a href="article.html" class="news__article-image">
+                        <img src="img/article.png" width="592" height="254" alt="image">
+                     </a>
+                     <div class="news__article-info">
+                        <div class="news__article-date">01.04.2026</div>
+                        <a href="article.html" class="news__article-name">
+                           GREEN запускает продажи плагина GreenFlow (ГринФлоу)
+                        </a>
+                        <div class="news__article-descr">
+                           Инжиниринговая компания GREEN объявляет о запуске продаж собственного плагина GreenFlow
+                           (ГринФлоу) для Autodesk Revit.
+                           С 1 апреля 2026 года плагин станет доступен для использования компаниями и специалистами,
+                           работающими с цифровыми
+                           моделями и инженерными данными.
+                        </div>
+                        <div class="news__article-link">
+                           <a href="article.html">Читать подробнее</a>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="news__article">
+                     <span class="news__tag">Новости</span>
+                     <a href="article.html" class="news__article-image">
+                        <img src="img/article.png" width="592" height="254" alt="image">
+                     </a>
+                     <div class="news__article-info">
+                        <div class="news__article-date">01.04.2026</div>
+                        <a href="article.html" class="news__article-name">
+                           GREEN запускает продажи плагина GreenFlow (ГринФлоу)
+                        </a>
+                        <div class="news__article-descr">
+                           Инжиниринговая компания GREEN объявляет о запуске продаж собственного плагина GreenFlow
+                           (ГринФлоу) для Autodesk Revit.
+                           С 1 апреля 2026 года плагин станет доступен для использования компаниями и специалистами,
+                           работающими с цифровыми
+                           моделями и инженерными данными.
+                        </div>
+                        <div class="news__article-link">
+                           <a href="article.html">Читать подробнее</a>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="news__article">
+                     <span class="news__tag">Новости</span>
+                     <a href="article.html" class="news__article-image">
+                        <img src="img/article.png" width="592" height="254" alt="image">
+                     </a>
+                     <div class="news__article-info">
+                        <div class="news__article-date">01.04.2026</div>
+                        <a href="article.html" class="news__article-name">
+                           GREEN запускает продажи плагина GreenFlow (ГринФлоу)
+                        </a>
+                        <div class="news__article-descr">
+                           Инжиниринговая компания GREEN объявляет о запуске продаж собственного плагина GreenFlow
+                           (ГринФлоу) для Autodesk Revit.
+                           С 1 апреля 2026 года плагин станет доступен для использования компаниями и специалистами,
+                           работающими с цифровыми
+                           моделями и инженерными данными.
+                        </div>
+                        <div class="news__article-link">
+                           <a href="article.html">Читать подробнее</a>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-
       </main>
       <footer class="footer">
    <div class="footer__body container">
