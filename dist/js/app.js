@@ -324,29 +324,58 @@ function init() {
 } */
 
 /*==========================================================================
-Swiper slider
+Marque slider
 ============================================================================*/
-/* const reviewsSlider = document.querySelector(".reviews__slider");
+function initMarqueeSplide() {
+   const slider = document.querySelector('.marque__slider');
+   if (!slider) return;
 
-if (reviewsSlider) {
-   const reviewsSwiper = new Swiper(reviewsSlider, {
-      slidesPerView: 1,
-      loop: true,
-      freeMode: false,
-      parallax: true,
-      speed: 800,
-      pagination: {
-         el: ".reviews__slider-pagination",
-         clickable: true,
+   const list = slider.querySelector('.splide__list');
+   if (!list) return;
+
+   const slides = list.children;
+   const currentSlides = slides.length;
+   if (!currentSlides) return;
+
+   const MIN_SLIDES = 12;
+
+   if (currentSlides < MIN_SLIDES) {
+      const fragment = document.createDocumentFragment();
+      const times = Math.ceil(MIN_SLIDES / currentSlides);
+
+      for (let i = 0; i < times; i++) {
+         [...slides].forEach(slide => {
+            fragment.appendChild(slide.cloneNode(true));
+         });
+      }
+
+      list.appendChild(fragment);
+   }
+
+   const splide = new Splide(slider, {
+      type: 'loop',
+      drag: false,
+      arrows: false,
+      pagination: false,
+      autoWidth: true,
+      gap: '10px',
+
+      breakpoints: {
+         768: {
+            gap: '6px',
+         },
       },
-      navigation: {
-         nextEl: ".reviews__slide-next",
-         prevEl: ".reviews__slide-prev",
+
+      autoScroll: {
+         speed: 0.7,
+         pauseOnHover: false,
+         pauseOnFocus: false,
       },
    });
-}
- */
 
+   const { AutoScroll } = window.splide.Extensions;
+   splide.mount({ AutoScroll });
+}
 
 
 /*==========================================================================
@@ -679,6 +708,68 @@ function initAutoResize() {
    document.querySelectorAll('.editable__text').forEach(autoResizeTextarea);
 }
 
+
+/*==========================================================================
+Solutions anim
+============================================================================*/
+function initSolutionsScrollSlider() {
+   const section = document.querySelector(".solutions");
+   if (!section) return;
+
+   const images = section.querySelectorAll(".solutions__image");
+   if (!images.length) return;
+
+   const total = images.length;
+
+   let step = window.innerHeight;
+
+   const startOffset = window.innerHeight * 0.3;
+   // ↑ задержка 30% экрана (настраивается)
+
+   let currentIndex = 0;
+
+   function setClasses(index) {
+      images.forEach((img, i) => {
+         img.classList.remove("is-active", "is-prev", "is-next");
+
+         if (i === index) img.classList.add("is-active");
+         else if (i < index) img.classList.add("is-prev");
+         else img.classList.add("is-next");
+      });
+   }
+
+   function update() {
+      const rect = section.getBoundingClientRect();
+
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+      let progress = window.innerHeight - rect.top;
+
+      // 🔥 ключевая строка — отсрочка старта
+      progress = Math.max(0, progress - startOffset);
+
+      let index = Math.floor(progress / step);
+
+      index = Math.max(0, Math.min(total - 1, index));
+
+      if (index !== currentIndex) {
+         currentIndex = index;
+         setClasses(currentIndex);
+      }
+   }
+
+   function onResize() {
+      step = window.innerHeight;
+      update();
+   }
+
+   window.addEventListener("scroll", update, { passive: true });
+   window.addEventListener("resize", onResize);
+
+   setClasses(0);
+   update();
+}
+
 /*==========================================================================
 Init
 ============================================================================*/
@@ -692,7 +783,13 @@ document.addEventListener('DOMContentLoaded', () => {
    initPasswordToggle();
    initEditableTextarea();
    initAutoResize();
+   initMarqueeSplide();
+   initSolutionsScrollSlider()
 });
+
+
+
+
 })();
 
 /******/ })()

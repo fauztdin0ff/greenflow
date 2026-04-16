@@ -21,12 +21,12 @@
    <meta property="og:url" content="">
    <meta property="og:type" content="website">
    <!-- Styles -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="css/splide.min.css">
    <link rel="stylesheet" href="css/style.min.css">
    <title>Главная</title>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
    <div class="wrapper">
       <header class="header">
    <div class="header__body container">
@@ -69,6 +69,145 @@
    </div>
 </header>
       <main>
+         <section class="hero">
+            <div class="hero__body container">
+               <div class="hero__info">
+                  <h1 class="hero__title">
+                     <span class="green-text">GreenFlow (ГринФлоу) —</span>
+                     <span>это 5 индивидуальных профилей </span>
+                     <span>по<span class="green-text">14 команд</span> вокруг курсора</span>
+                     <img src="img/hero-figure.svg" alt="">
+                  </h1>
+                  <div class="hero__subtitle">
+                     Инструмент для проектных команд и специалистов, который
+                     ускоряет любую работу в Revit
+                  </div>
+                  <div class="hero__button">
+                     <a href="buy.html" class="btn">Тарифы</a>
+                  </div>
+               </div>
+
+               <div class="hero__graphic">
+                  <picture>
+                     <source media="(max-width: 767px)" srcset="img/hero-image-mob.svg">
+                     <img src="img/hero-image.svg" class="hero__image" width="637" height="520" alt="image">
+                  </picture>
+                  <img src="img/robot-hand.png" class="hero__hand" width="196" height="244" alt="robot hand">
+               </div>
+            </div>
+         </section>
+
+         <div class="marque">
+            <div class="marque__body">
+               <div class="marque__slider splide">
+                  <div class="splide__track">
+                     <ul class="splide__list">
+                        <li class="marque__slide splide__slide">BIM (ТИМ)-специалисты</li>
+                        <li class="marque__slide splide__slide">Проектные компании</li>
+                        <li class="marque__slide splide__slide">Архитекторы</li>
+                        <li class="marque__slide splide__slide">Инженеры</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <section class="advantages">
+            <div class="advantages__body container">
+               <h2 class="advantages__title section-title">
+                  Преимущества GreenFlow (ГринФлоу)
+               </h2>
+               <div class="advantages__cards">
+                  <div class="advantages__card">
+                     <div class="advantages__card-icon">
+                        <img src="img/icons/rocket.svg" width="60" height="60" alt="icon">
+                     </div>
+                     <div class="advantages__card-info">
+                        <div class="advantages__card-name">+20% к скорости работы в Revit</div>
+                        <div class="advantages__card-descr">
+                           Ускоряйте привычные процессы без переобучения и смены рабочих методов. Работайте,
+                           как привыкли, но быстрее.
+                        </div>
+                     </div>
+                  </div>
+                  <div class="advantages__card">
+                     <div class="advantages__card-icon">
+                        <img src="img/icons/settings.svg" width="60" height="60" alt="icon">
+                     </div>
+                     <div class="advantages__card-info">
+                        <div class="advantages__card-name">Гибкая настройка под ваши задачи</div>
+                        <div class="advantages__card-descr">
+                           Настраивайте расположение команд как вам удобно, cоберите до 14 команд в персональный
+                           профиль. Организуйте рабочее
+                           место, чтобы не делать лишних движений.
+                        </div>
+                     </div>
+                  </div>
+                  <div class="advantages__card">
+                     <div class="advantages__card-icon">
+                        <img src="img/icons/stack.svg" width="60" height="60" alt="icon">
+                     </div>
+                     <div class="advantages__card-info">
+                        <div class="advantages__card-name">Профили для работы с разными задачами</div>
+                        <div class="advantages__card-descr">
+                           Создавайте профили под конкретные задачи и переключайтесь между ними в один клик.
+                           Моделирование, оформление, проверка —
+                           нужное всегда под рукой.
+                        </div>
+                     </div>
+                  </div>
+                  <div class="advantages__card">
+                     <div class="advantages__card-icon">
+                        <img src="img/icons/command.svg" width="60" height="60" alt="icon">
+                     </div>
+                     <div class="advantages__card-info">
+                        <div class="advantages__card-name">Работа с любыми командами</div>
+                        <div class="advantages__card-descr">
+                           Используете плагины в работе? Добавляйте их команды себе в профиль. Никаких ограничений —
+                           только инструменты, которые
+                           нужны именно вам.
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="solutions">
+            <div class="solutions__content">
+               <div class="solutions__wrapper">
+                  <div class="solutions__body container">
+                     <div class="solutions__info">
+                        <h2 class="solutions__title section-title">Какие задачи решает GreenFlow (ГринФлоу)</h2>
+                        <ul class="solutions__list">
+                           <li>Ускоряет повседневную работу в Revit без изменения процессов</li>
+                           <li>Снижает количество ручных действий и переключений</li>
+                           <li>Адаптирует рабочее пространство под конкретные задачи и ваш стиль работы</li>
+                           <li>Повышает производительность как отдельных специалистов, так и команд</li>
+                           <li>Обеспечивает быстрое переключение между этапами работы</li>
+                        </ul>
+                     </div>
+                     <div class="solutions__images">
+                        <div class="solutions__image --image-1">
+                           <img src="img/slide-1.svg" alt="">
+                        </div>
+                        <div class="solutions__image --image-2">
+                           <img src="img/slide-2.svg" alt="">
+                        </div>
+                        <div class="solutions__image --image-3">
+                           <img src="img/slide-3.svg" alt="">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="solutions__bg">
+                     <svg>
+                        <use xlink:href="img/icons/icons.svg#icon-figure"></use>
+                     </svg>
+                  </div>
+               </div>
+               <img src="img/corner.png" class="solutions__corner" alt="corner">
+            </div>
+         </section>
       </main>
       <footer class="footer">
    <div class="footer__body container">
@@ -433,7 +572,8 @@
 </div>
    
 
-   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+   <script src="js/splide.min.js"></script>
+   <script src="js/splide-auto-scroll.min.js"></script>
    <script src="js/app.js"></script>
 </body>
 
