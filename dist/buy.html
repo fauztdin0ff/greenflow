@@ -33,7 +33,7 @@
       <button type="button" class="menu__icon" aria-label="Открыть меню">
          <img src="img/icons/menu-list.svg" width="20" height="10" alt="icon">
       </button>
-      <a href="/" class="header__logo" aria-label="На главную">
+      <a href="index.html" class="header__logo" aria-label="На главную">
          <img src="img/logo-brand.png" width="230" height="67" alt="logo">
       </a>
       <div class="header__menu menu">
@@ -47,7 +47,7 @@
                </svg>
             </button>
             <ul class="menu__list">
-               <li><a href="/">Главная</a></li>
+               <li><a href="index.html">Главная</a></li>
                <li><a href="buy.html">Купить</a></li>
                <li><a href="spravka.html">Справка</a></li>
                <li><a href="news.html">Новости</a></li>
@@ -55,11 +55,11 @@
          </div>
       </div>
       <div class="header__buttons">
-         <button type="button" class="header__button open-popup" data-popup="login-popup" aria-label="Войти">
+         <a href="cabinet.html" class="header__button" aria-label="Кабинет">
             <svg>
                <use xlink:href="img/icons/icons.svg#icon-user"></use>
             </svg>
-         </button>
+         </a>
          <a href="cart.html" class="header__button" aria-label="Корзина">
             <svg>
                <use xlink:href="img/icons/icons.svg#icon-cart"></use>
@@ -74,7 +74,7 @@
             <div class="breadcrumbs__body container">
                <ol class="breadcrumbs__list">
                   <li class="breadcrumbs__item">
-                     <a href="/">Личный кабинет</a>
+                     <a href="cabinet.html">Личный кабинет</a>
                   </li>
                   <li class="breadcrumbs__item">
                      <span>Скачать</span>
@@ -96,7 +96,7 @@
                         <div class="price__card-days">10 дней</div>
                         <div class="price__card-price">Бесплатно</div>
                         <div class="price__card-button">
-                           <a href="" class="btn">Купить</a>
+                           <a href="buy.html" class="btn">Купить</a>
                         </div>
                      </div>
                      <div class="price__card-descr">
@@ -109,7 +109,7 @@
                         <div class="price__card-days">1 месяц</div>
                         <div class="price__card-price">750 ₽</div>
                         <div class="price__card-button">
-                           <a href="" class="btn">Купить</a>
+                           <a href="buy.html" class="btn">Купить</a>
                         </div>
                      </div>
                      <div class="price__card-descr">Ускорьте свою работу в Revit на 1 месяц. Подходит для тестирования
@@ -120,7 +120,7 @@
                         <div class="price__card-days">3 месяца</div>
                         <div class="price__card-price">1 500 ₽</div>
                         <div class="price__card-button">
-                           <a href="" class="btn">Купить</a>
+                           <a href="buy.html" class="btn">Купить</a>
                         </div>
                      </div>
                      <div class="price__card-descr">Повышение эффективности для работы на 3 месяца. Подходит
@@ -132,7 +132,7 @@
                         <div class="price__card-days">6 месяцев</div>
                         <div class="price__card-price">2 500 ₽</div>
                         <div class="price__card-button">
-                           <a href="" class="btn">Купить</a>
+                           <a href="buy.html" class="btn">Купить</a>
                         </div>
                      </div>
                      <div class="price__card-descr">Быстрая работа в Revit на протяжении 6 месяцев. Отлично подходит
@@ -143,7 +143,7 @@
                         <div class="price__card-days">12 месяцев</div>
                         <div class="price__card-price">4 000 ₽</div>
                         <div class="price__card-button">
-                           <a href="" class="btn">Купить</a>
+                           <a href="buy.html" class="btn">Купить</a>
                         </div>
                      </div>
                      <div class="price__card-descr">Максимальная выгода на целый год. Самый лучший способ обогнать
@@ -195,7 +195,8 @@
                         </div>
                      </div>
                      <div class="how__button">
-                        <a href="" class="btn">Запросить счёт для юрлица</a>
+                        <button type="button" class="btn open-popup" data-popup="request-popup">Запросить счёт для
+                           юрлица</button>
                      </div>
                   </div>
                </div>
@@ -335,20 +336,20 @@
             <div class="footer__menu-col">
                <div class="footer__label">Компания</div>
                <ul class="footer__menu-list">
-                  <li><a href="">Главная</a></li>
-                  <li><a href="">Купить</a></li>
-                  <li><a href="">Справка</a></li>
-                  <li><a href="">Новости</a></li>
+                  <li><a href="index.html">Главная</a></li>
+                  <li><a href="buy.html">Купить</a></li>
+                  <li><a href="spravka.html">Справка</a></li>
+                  <li><a href="news.html">Новости</a></li>
                </ul>
             </div>
             <div class="footer__menu-col">
                <div class="footer__label">Правовая информация</div>
                <ul class="footer__menu-list">
-                  <li><a href="">Публичная оферта лицензионный договор</a></li>
-                  <li><a href="">Политика конфиденциальности</a></li>
-                  <li><a href="">Согласие на обработку персональных данных</a></li>
+                  <li><a href="terms-of-service.html">Публичная оферта лицензионный договор</a></li>
+                  <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+                  <li><a href="data-consent.html">Согласие на обработку персональных данных</a></li>
                   <li><a href="">Политика использования Cookies</a></li>
-                  <li><a href="">Контакты</a></li>
+                  <li><a href="contacts.html">Контакты</a></li>
                </ul>
             </div>
          </div>
