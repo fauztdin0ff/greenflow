@@ -770,6 +770,119 @@ function initSolutionsScrollSlider() {
    update();
 }
 
+
+/*==========================================================================
+Hover steps
+============================================================================*/
+function initInstallSteps() {
+   const sections = document.querySelectorAll('.start');
+
+   sections.forEach(section => {
+      const steps = section.querySelectorAll('.install__step');
+      if (!steps.length) return;
+
+      let activeStep = steps[0];
+
+      function setActive(step) {
+         if (activeStep === step) return;
+
+         activeStep.classList.remove('active');
+         const prevContent = activeStep.querySelector('.install__step-content');
+         if (prevContent) prevContent.style.maxHeight = '0px';
+
+         activeStep = step;
+         activeStep.classList.add('active');
+
+         const content = activeStep.querySelector('.install__step-content');
+         if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+         }
+      }
+
+      // init first open
+      steps.forEach(step => {
+         const content = step.querySelector('.install__step-content');
+         if (content) content.style.maxHeight = '0px';
+         step.classList.remove('active');
+      });
+
+      activeStep.classList.add('active');
+      const firstContent = activeStep.querySelector('.install__step-content');
+      if (firstContent) {
+         firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+      }
+
+      // hover behavior
+      steps.forEach(step => {
+         step.addEventListener('mouseenter', () => {
+            setActive(step);
+         });
+      });
+   });
+}
+
+
+/*==========================================================================
+Videos
+============================================================================*/
+function initVideoPlayers() {
+   const players = document.querySelectorAll('.player');
+   if (!players.length) return;
+
+   players.forEach(player => {
+      const video = player.querySelector('.player__video');
+      const button = player.querySelector('.player__button');
+
+      if (!video || !button) return;
+
+      button.addEventListener('click', () => {
+         video.play();
+         video.setAttribute('controls', 'controls');
+         button.style.display = 'none';
+      });
+   });
+}
+
+
+/*==========================================================================
+Reviews slider
+============================================================================*/
+function initReviewsSlider() {
+   const slider = document.querySelector('.reviews__slider');
+
+   if (!slider || typeof Splide === 'undefined') return;
+
+   const splide = new Splide(slider, {
+      type: 'loop',
+      perPage: 1,
+      autoWidth: true,
+      gap: '24px',
+      pagination: false,
+      arrows: false,
+      drag: true,
+      rewind: true,
+      breakpoints: {
+         550: {
+            gap: '8px',
+         },
+      },
+   });
+
+   splide.mount();
+
+   const prevBtn = document.querySelector('.reviews__slider-prev');
+   const nextBtn = document.querySelector('.reviews__slider-next');
+
+   if (prevBtn) {
+      prevBtn.addEventListener('click', () => splide.go('<'));
+   }
+
+   if (nextBtn) {
+      nextBtn.addEventListener('click', () => splide.go('>'));
+   }
+}
+
+
 /*==========================================================================
 Init
 ============================================================================*/
@@ -784,7 +897,10 @@ document.addEventListener('DOMContentLoaded', () => {
    initEditableTextarea();
    initAutoResize();
    initMarqueeSplide();
-   initSolutionsScrollSlider()
+   initSolutionsScrollSlider();
+   initInstallSteps();
+   initVideoPlayers();
+   initReviewsSlider();
 });
 
 

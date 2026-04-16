@@ -26,7 +26,7 @@
    <title>Главная</title>
 </head>
 
-<body style="overflow-x: hidden;">
+<body>
    <div class="wrapper">
       <header class="header">
    <div class="header__body container">
@@ -206,6 +206,276 @@
                   </div>
                </div>
                <img src="img/corner.png" class="solutions__corner" alt="corner">
+            </div>
+         </section>
+
+         <section class="start">
+            <div class="start__body container">
+               <h2 class="start__title section-title">Как начать работу</h2>
+               <div class="start__content">
+                  <div class="start__video">
+                     <div class="player">
+                        <video src="files/video.mp4" class="player__video"></video>
+                        <button type="button" class="player__button" aria-label="Воспроизвести">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon-play"></use>
+                           </svg>
+                        </button>
+                     </div>
+                  </div>
+                  <div class="start__steps">
+                     <div class="install__step">
+                        <div class="install__step-head">
+                           <div class="install__step-num">1</div>
+                           <div class="install__step-name">Регистрация</div>
+                        </div>
+                        <div class="install__step-content">
+                           <div class="install__step-text">
+                              Зарегистрируйтесь на сайте в личном кабинете
+                           </div>
+                           <button type="button" class="btn open-popup"
+                              data-popup="registr-popup">Зарегистрироваться</button>
+                        </div>
+                     </div>
+                     <div class="install__step">
+                        <div class="install__step-head">
+                           <div class="install__step-num">2</div>
+                           <div class="install__step-name">Покупка лицензии</div>
+                        </div>
+                        <div class="install__step-content">
+                           <div class="install__step-text">
+                              Выберите подходящий тариф и оформите покупку
+                           </div>
+                           <a href="buy.html" class="btn">Выбрать тариф</a>
+                        </div>
+                     </div>
+                     <div class="install__step">
+                        <div class="install__step-head">
+                           <div class="install__step-num">3</div>
+                           <div class="install__step-name">Скачивание</div>
+                        </div>
+                        <div class="install__step-content">
+                           <div class="install__step-text">
+                              Скачайте установочный файл плагина
+                           </div>
+                           <a href="download.html" class="btn">Скачать</a>
+                        </div>
+                     </div>
+                     <div class="install__step">
+                        <div class="install__step-head">
+                           <div class="install__step-num">4</div>
+                           <div class="install__step-name">Активация</div>
+                        </div>
+                        <div class="install__step-content">
+                           <div class="install__step-text">
+                              Установите плагин на ПК и активируйте свою лицензию
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="support">
+            <div class="support__body container">
+               <div class="support__wrapper">
+                  <div class="support__decore">
+                     <picture>
+                        <source media="(max-width: 767px)" srcset="img/supp-top.svg">
+                        <img src="img/supp-left.svg" alt="">
+                     </picture>
+                  </div>
+                  <div class="support__main">
+                     <div class="support__logo">
+                        <img src="img/logo-icon.svg" width="125" height="69" alt="logo">
+                     </div>
+                     <div class="support__info">
+                        <img src="img/supp-text.svg" class="support__text" alt="Начните работать быстрее уже сегодня!">
+                        <div class="support__button">
+                           <button type="button" class="btn open-popup" data-popup="registr-popup">Попробовать
+                              бесплатно</button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="support__decore">
+                     <picture>
+                        <source media="(max-width: 767px)" srcset="img/supp-bottom.svg">
+                        <img src="img/supp-right.svg" alt="">
+                     </picture>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="specifications">
+            <div class="specifications__main">
+               <div class="specifications__wrapper">
+                  <div class="specifications__body container">
+                     <h2 class="specifications__title section-title">Технические характеристики</h2>
+                     <div class="specifications__items">
+                        <div class="specifications__item">
+                           <div class="specifications__item-image">
+                              <img src="img/spec-1.png" width="482" height="294" alt="image">
+                           </div>
+                           <div class="specifications__item-text">Совместимость: Revit 2020-2024</div>
+                        </div>
+                        <div class="specifications__item">
+                           <div class="specifications__item-image">
+                              <img src="img/spec-2.png" width="482" height="294" alt="image">
+                           </div>
+                           <div class="specifications__item-text">Для работы плагина необходимо наличие интернета</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="specifications__bg">
+                     <svg>
+                        <use xlink:href="img/icons/icons.svg#icon-figure"></use>
+                     </svg>
+                  </div>
+               </div>
+               <img src="img/corner.png" class="specifications__corner" alt="corner">
+            </div>
+         </section>
+
+         <section class="reviews">
+            <div class="reviews__body">
+               <h2 class="reviews__title section-title">Отзывы</h2>
+               <div class="reviews__content">
+                  <div class="reviews__slider splide">
+                     <div class="splide__track">
+                        <ul class="splide__list">
+                           <li class="review splide__slide">
+                              <div class="review__wrapper">
+                                 <div class="review__author">
+                                    <div class="review__author-preview">
+                                       <div class="review__author-photo">
+                                          <img src="img/author-3.png" width="80" height="80" alt="photo">
+                                       </div>
+                                    </div>
+                                    <div class="review__author-info">
+                                       <div class="review__author-name">Виталий П.</div>
+                                       <div class="review__author-role">BIM-координатор, проектная компания</div>
+                                    </div>
+                                 </div>
+                                 <div class="review__text">
+                                    Очень простой инструмент, но эффект ощущается сразу. Больше не трачу время на поиск
+                                    команд по вкладкам, все под рукой.
+                                    Особенно удобно переключаться между профилями для проверки моделей и разработки
+                                    семейств.
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="review splide__slide">
+                              <div class="review__wrapper">
+                                 <div class="review__author">
+                                    <div class="review__author-photo">
+                                       <img src="img/author-4.png" width="80" height="80" alt="photo">
+                                    </div>
+                                    <div class="review__author-info">
+                                       <div class="review__author-name">Марина К.</div>
+                                       <div class="review__author-role">архитектор, проектная компания</div>
+                                    </div>
+                                 </div>
+                                 <div class="review__text">
+                                    Сначала показалось, что это мелочь, но через пару дней работы – без плагина уже не
+                                    комфортно. Реально ускоряет рутину и
+                                    снижает раздражение от беготни по вкладкам
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="review splide__slide">
+                              <div class="review__wrapper">
+                                 <div class="review__author">
+                                    <div class="review__author-photo">
+                                       <img src="img/author-3.png" width="80" height="80" alt="photo">
+                                    </div>
+                                    <div class="review__author-info">
+                                       <div class="review__author-name">Виталий П.</div>
+                                       <div class="review__author-role">BIM-координатор, проектная компания</div>
+                                    </div>
+                                 </div>
+                                 <div class="review__text">
+                                    Очень простой инструмент, но эффект ощущается сразу. Больше не трачу время на поиск
+                                    команд по вкладкам, все под рукой.
+                                    Особенно удобно переключаться между профилями для проверки моделей и разработки
+                                    семейств.
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="review splide__slide">
+                              <div class="review__wrapper">
+                                 <div class="review__author">
+                                    <div class="review__author-photo">
+                                       <img src="img/author-4.png" width="80" height="80" alt="photo">
+                                    </div>
+                                    <div class="review__author-info">
+                                       <div class="review__author-name">Марина К.</div>
+                                       <div class="review__author-role">архитектор, проектная компания</div>
+                                    </div>
+                                 </div>
+                                 <div class="review__text">
+                                    Сначала показалось, что это мелочь, но через пару дней работы – без плагина уже не
+                                    комфортно. Реально ускоряет рутину и
+                                    снижает раздражение от беготни по вкладкам
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="review splide__slide">
+                              <div class="review__wrapper">
+                                 <div class="review__author">
+                                    <div class="review__author-photo">
+                                       <img src="img/author-3.png" width="80" height="80" alt="photo">
+                                    </div>
+                                    <div class="review__author-info">
+                                       <div class="review__author-name">Виталий П.</div>
+                                       <div class="review__author-role">BIM-координатор, проектная компания</div>
+                                    </div>
+                                 </div>
+                                 <div class="review__text">
+                                    Очень простой инструмент, но эффект ощущается сразу. Больше не трачу время на поиск
+                                    команд по вкладкам, все под рукой.
+                                    Особенно удобно переключаться между профилями для проверки моделей и разработки
+                                    семейств.
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="review splide__slide">
+                              <div class="review__wrapper">
+                                 <div class="review__author">
+                                    <div class="review__author-photo">
+                                       <img src="img/author-4.png" width="80" height="80" alt="photo">
+                                    </div>
+                                    <div class="review__author-info">
+                                       <div class="review__author-name">Марина К.</div>
+                                       <div class="review__author-role">архитектор, проектная компания</div>
+                                    </div>
+                                 </div>
+                                 <div class="review__text">
+                                    Сначала показалось, что это мелочь, но через пару дней работы – без плагина уже не
+                                    комфортно. Реально ускоряет рутину и
+                                    снижает раздражение от беготни по вкладкам
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="reviews__slider-nav">
+                        <button type="button" class="reviews__slider-prev" aria-label="Предыдущий слайд">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon-arrow-left"></use>
+                           </svg>
+                        </button>
+                        <button type="button" class="reviews__slider-next" aria-label="Следующий слайд">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon-arrow-right"></use>
+                           </svg>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <img src="img/rev-bd.svg" class="reviews__figure" alt="">
+               <img src="img/rev-bd.svg" class="reviews__figure-2" alt="">
             </div>
          </section>
       </main>
