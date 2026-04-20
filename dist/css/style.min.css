@@ -233,7 +233,7 @@ main {
   position: fixed;
   inset: 0;
   height: 100dvh;
-  background: rgba(74, 74, 74, 0.6);
+  background: #fbfbfb;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
