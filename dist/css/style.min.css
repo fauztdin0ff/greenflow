@@ -192,13 +192,16 @@ body::after {
   pointer-events: none;
   transition: all 0.5s ease;
   opacity: 0;
-  z-index: 3;
+  z-index: 5;
 }
 body.no-scroll {
   overflow: hidden;
 }
 body.no-scroll::after {
   opacity: 1;
+}
+body.no-scroll .aside {
+  z-index: 4;
 }
 
 .wrapper {
