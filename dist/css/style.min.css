@@ -182,6 +182,9 @@ body {
 body.no-scroll .aside {
   z-index: 4;
 }
+body.no-scroll .menu::after {
+  opacity: 1;
+}
 
 .wrapper {
   min-height: 100%;
@@ -212,7 +215,7 @@ main {
   position: fixed;
   inset: 0;
   height: 100dvh;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.6);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -614,6 +617,7 @@ Menu
   }
   .menu__body.active {
     transform: translateX(0);
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.06);
   }
 }
 .menu__body-logo {
