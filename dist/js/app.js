@@ -72,9 +72,7 @@ function phoneMask() {
    });
 }
 
-/*---------------------------------------------------------------------------
-Бургер меню
----------------------------------------------------------------------------*/
+
 /*---------------------------------------------------------------------------
 Бургер меню
 ---------------------------------------------------------------------------*/
@@ -82,90 +80,44 @@ function burgerMenu() {
    document.addEventListener("DOMContentLoaded", () => {
       const menuIcon = document.querySelector(".menu__icon");
       const menuBody = document.querySelector(".menu__body");
-      const menuBodyClose = document.querySelector(".menu__body-close");
-      const overlay = document.querySelector(".overlay");
-
       const body = document.body;
-      const html = document.documentElement;
-
+      const menuBodyClose = document.querySelector(".menu__body-close");
       const animationDuration = 500;
 
       if (!menuIcon || !menuBody) return;
-
-      const setSafariBackdrop = (state) => {
-         if (state) {
-            html.style.backgroundColor = "#fbfbfb";
-            body.style.backgroundColor = "#fbfbfb";
-         } else {
-            html.style.backgroundColor = "";
-            body.style.backgroundColor = "";
-         }
-      };
 
       const closeMenu = () => {
          menuIcon.classList.remove("active");
          menuBody.classList.remove("active");
          body.classList.remove("no-scroll");
-         html.classList.remove("no-scroll");
-
-         if (overlay) overlay.classList.remove("active");
-
-         setSafariBackdrop(false);
-      };
-
-      const openMenu = () => {
-         menuIcon.classList.add("active");
-         menuBody.classList.add("active");
-         body.classList.add("no-scroll");
-         html.classList.add("no-scroll");
-
-         if (overlay) overlay.classList.add("active");
-
-         setSafariBackdrop(true);
       };
 
       menuIcon.addEventListener("click", () => {
-         const isOpen = menuBody.classList.contains("active");
-
-         if (isOpen) {
-            closeMenu();
-         } else {
-            openMenu();
-         }
+         menuIcon.classList.toggle("active");
+         menuBody.classList.toggle("active");
+         body.classList.toggle("no-scroll");
       });
 
       menuBody.addEventListener("click", (e) => {
          const link = e.target.closest("a");
-
          if (link) {
             e.preventDefault();
             closeMenu();
-
             setTimeout(() => {
                window.location.href = link.href;
             }, animationDuration);
          }
       });
 
-      if (menuBodyClose) {
-         menuBodyClose.addEventListener("click", closeMenu);
-      }
-
-      if (overlay) {
-         overlay.addEventListener("click", closeMenu);
-      }
+      if (menuBodyClose) menuBodyClose.addEventListener("click", closeMenu);
 
       document.addEventListener("click", (e) => {
-         if (
-            !menuBody.contains(e.target) &&
-            !menuIcon.contains(e.target) &&
-            (!overlay || !overlay.contains(e.target))
-         ) {
-            closeMenu();
-         }
+         if (!menuBody.contains(e.target) && !menuIcon.contains(e.target)) closeMenu();
       });
    });
 }
+
+
 
 /*---------------------------------------------------------------------------
 Попапы

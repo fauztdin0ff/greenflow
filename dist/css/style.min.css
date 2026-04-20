@@ -180,6 +180,32 @@ body {
   background: var(--color-main-bg);
   position: relative;
 }
+body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: rgba(74, 74, 74, 0.66);
+  pointer-events: none;
+  transition: all 0.5s ease;
+  opacity: 0;
+  z-index: 5;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+body.no-scroll::after {
+  opacity: 1;
+}
+body.no-scroll .aside {
+  z-index: 4;
+}
+body.no-scroll .menu::after {
+  opacity: 1;
+}
 
 .wrapper {
   min-height: 100%;
@@ -204,22 +230,6 @@ main {
   .container {
     width: calc(100% - 24px);
   }
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  height: 100dvh;
-  background: rgba(74, 74, 74, 0.66);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 998;
-}
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 /*==========================================================================
@@ -580,22 +590,6 @@ Header
 /*==========================================================================
 Menu
 ============================================================================*/
-@media (width < 1000px) {
-  .menu::after {
-    content: "";
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: var(--color-main-bg);
-    z-index: 4;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.5s ease;
-  }
-}
 .menu__icon {
   display: none;
 }
