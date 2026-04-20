@@ -194,9 +194,6 @@ body::after {
   opacity: 0;
   z-index: 5;
 }
-body.no-scroll {
-  overflow: hidden;
-}
 body.no-scroll::after {
   opacity: 1;
 }
