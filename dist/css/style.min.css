@@ -179,6 +179,9 @@ body {
   font-size: var(--font-size-base);
   background: var(--color-main-bg);
 }
+body.no-scroll {
+  overflow: hidden;
+}
 body.no-scroll .aside {
   z-index: 4;
 }
