@@ -229,6 +229,22 @@ main {
   }
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.modal-open .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /*==========================================================================
 Components
 ============================================================================*/
