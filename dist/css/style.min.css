@@ -188,6 +188,9 @@ body.no-scroll .aside {
 body.no-scroll .menu::after {
   opacity: 1;
 }
+body.popup-opened {
+  overflow: hidden;
+}
 
 .wrapper {
   min-height: 100%;
